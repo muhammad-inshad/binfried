@@ -1,76 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Flame, Mail, Send, CheckCircle2, Heart, ArrowRight } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail('');
-    }
-  };
-
   return (
     <footer className="bg-[#1C1717] text-[#EDE7E5] border-t-4 border-[#D71920] pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Newsletter Callout in Footer Top */}
-        <div className="bg-gradient-to-r from-[#A80F17] to-[#D71920] rounded-2xl p-8 mb-16 shadow-xl relative overflow-hidden">
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-white text-xs font-bold tracking-wider uppercase mb-3">
-                Join 24,000+ Fried Chicken Enthusiasts
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-serif leading-tight">
-                Unlock The Secret Science Of The Crunchiest Chicken
-              </h3>
-              <p className="text-red-100 text-sm mt-2 max-w-xl">
-                Get our weekly fried chicken breakdown: exact frying temperatures, secret dredge formulas, and crisping guides straight to your inbox. No spam. Ever.
-              </p>
-            </div>
-            <div className="lg:col-span-5">
-              {subscribed ? (
-                <div className="bg-white/10 border border-white/30 rounded-xl p-4 flex items-center gap-3 text-white">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-300 shrink-0" />
-                  <div>
-                    <p className="font-bold text-sm">You are on the list!</p>
-                    <p className="text-xs text-red-100">Check your inbox for our Crispy Fried Chicken Chemistry Cheat Sheet.</p>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
-                  <div className="relative grow">
-                    <Mail className="absolute left-3.5 top-3.5 w-5 h-5 text-gray-400" />
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email address"
-                      required
-                      className="w-full pl-11 pr-4 py-3 bg-white text-gray-900 rounded-xl text-sm placeholder-gray-500 focus:outline-hidden focus:ring-2 focus:ring-white"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-[#1C1717] hover:bg-black text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap"
-                  >
-                    <span>Subscribe</span>
-                    <Send className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-
         {/* 4 Column Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           

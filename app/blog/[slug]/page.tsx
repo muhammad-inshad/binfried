@@ -7,7 +7,7 @@ import { RECIPES_DATA } from '@/data/recipes';
 import { constructMetadata } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { getArticleSchema } from '@/lib/schema';
+import { getArticleSchema, getAuthorPersonSchema } from '@/lib/schema';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
 import { 
   Calendar, 
@@ -63,6 +63,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
   return (
     <div className="pb-20">
       <JsonLd data={getArticleSchema(article)} />
+      <JsonLd data={getAuthorPersonSchema(article.author.name, article.author.role)} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <Breadcrumbs

@@ -47,6 +47,21 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
+export function getAuthorPersonSchema(authorName: string, role?: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: authorName,
+    jobTitle: role || 'Culinary Specialist',
+    url: `${SITE_URL}/about`,
+    worksFor: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL
+    }
+  };
+}
+
 export function getRecipeSchema(recipe: Recipe) {
   // ISO 8601 duration converter approx helper
   const formatDuration = (minsStr: string) => {
@@ -68,6 +83,7 @@ export function getRecipeSchema(recipe: Recipe) {
     author: {
       '@type': 'Person',
       name: recipe.author.name,
+      jobTitle: recipe.author.role,
       url: `${SITE_URL}/about`
     },
     publisher: {
@@ -118,6 +134,7 @@ export function getArticleSchema(article: BlogArticle) {
     author: {
       '@type': 'Person',
       name: article.author.name,
+      jobTitle: article.author.role,
       url: `${SITE_URL}/about`
     },
     publisher: {

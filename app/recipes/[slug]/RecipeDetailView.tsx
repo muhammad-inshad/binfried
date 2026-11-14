@@ -22,7 +22,7 @@ import { Recipe } from '@/types';
 import { RECIPES_DATA } from '@/data/recipes';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { getRecipeSchema, getFAQSchema } from '@/lib/schema';
+import { getRecipeSchema, getFAQSchema, getAuthorPersonSchema } from '@/lib/schema';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
 
 interface Props {
@@ -65,6 +65,7 @@ export const RecipeDetailView: React.FC<Props> = ({ recipe }) => {
   return (
     <div className="pb-20">
       <JsonLd data={getRecipeSchema(recipe)} />
+      <JsonLd data={getAuthorPersonSchema(recipe.author.name, recipe.author.role)} />
       {recipe.faqs.length > 0 && <JsonLd data={getFAQSchema(recipe.faqs)} />}
 
       {/* Main Container */}
