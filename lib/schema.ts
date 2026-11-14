@@ -1,8 +1,8 @@
 import { Recipe, BlogArticle, CookingGuide, IngredientKnowledge } from '@/types';
 
-export const SITE_URL = 'https://binfried.store';
-export const SITE_NAME = 'BINFried';
-export const SITE_TAGLINE = 'The Home of Crispy Fried Chicken';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://binfried.store';
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'BINFried';
+export const SITE_TAGLINE = process.env.NEXT_PUBLIC_SITE_TAGLINE || 'The Home of Crispy Fried Chicken';
 
 export function getOrganizationSchema() {
   return {
