@@ -6,7 +6,10 @@ import { constructMetadata } from '@/lib/seo';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 
-export const metadata: Metadata = constructMetadata({});
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.binfried.store'),
+  ...constructMetadata({}),
+};
 
 export default function RootLayout({
   children,

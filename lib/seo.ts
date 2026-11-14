@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from './schema';
 
+const PRODUCTION_DOMAIN = 'https://www.binfried.store';
+
 export function constructMetadata({
   title,
   description,
@@ -26,7 +28,8 @@ export function constructMetadata({
     cleanPath = cleanPath.slice(0, -1);
   }
 
-  const baseOrigin = SITE_URL.endsWith('/') ? SITE_URL.slice(0, -1) : SITE_URL;
+  // Always use production domain with www to avoid canonical mismatches and 308 redirect loops
+  const baseOrigin = PRODUCTION_DOMAIN;
   const url = cleanPath && cleanPath !== '/' ? `${baseOrigin}${cleanPath}` : baseOrigin;
   const ogImage = image.startsWith('http') ? image : `${baseOrigin}${image.startsWith('/') ? image : `/${image}`}`;
 
@@ -36,6 +39,7 @@ export function constructMetadata({
     alternates: {
       canonical: url,
     },
+    metadataBase: new URL(PRODUCTION_DOMAIN),
     openGraph: {
       title: fullTitle,
       description: fullDesc,
@@ -58,7 +62,6 @@ export function constructMetadata({
       images: [ogImage],
       creator: '@binfried_store',
     },
-    metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
         { url: '/icon.png', sizes: 'any' },

@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/lib/schema';
 import { RECIPES_DATA } from '@/data/recipes';
 import { BLOG_ARTICLES } from '@/data/blogs';
 import { COOKING_GUIDES } from '@/data/guides';
 import { INGREDIENTS_DATA } from '@/data/ingredients';
+
+const SITE_URL = 'https://www.binfried.store';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
