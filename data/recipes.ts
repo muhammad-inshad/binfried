@@ -176,22 +176,27 @@ export const RECIPES_DATA: Recipe[] = [
     ],
     cookingTips: [
       'White pepper is non-negotiable for authentic KFC flavor—it provides sharp earthy heat without the bitter specks of black pepper.',
-      'Celery salt provides that recognizable nostalgic savory undertone.',
-      'A heavy cast-iron Dutch oven with the lid slightly ajar mimics the internal steam pressure used in commercial broasters.'
+      'Indian kitchen substitution: replace buttermilk with 1.5 cups fresh curd (dahi) whisked with 1/2 cup water and 1 tsp vinegar.',
+      'Kadhai frying: fry in a heavy cast-iron or tri-ply kadhai in refined sunflower or groundnut oil at steady medium heat.',
+      'A heavy lid slightly ajar mimics the internal steam pressure used in commercial broasters.'
     ],
     commonMistakes: [
       'Skipping the white pepper or substituting with cayenne alters the profile entirely.',
       'Leaving herbs coarse; they must be ground to prevent scorched black specks in the oil.',
-      'Over-frying chicken breasts—remove white meat when it reaches 160°F.'
+      'Dropping too many pieces in a kadhai at once, which drops the oil temperature and produces oily chicken.'
     ],
     faqs: [
       {
-        question: 'Is MSG necessary for KFC-style chicken?',
-        answer: 'While optional, authentic commercial recipes use MSG to enhance the umami profile of the spice blend. You can omit it or substitute with mushroom powder.'
+        question: 'Can I make KFC-style chicken at home in an Indian kadhai?',
+        answer: 'Yes! Use a heavy-bottomed kadhai filled halfway with refined sunflower or groundnut oil. Keep heat on medium, fry 2 to 3 pieces at a time for 12 to 14 minutes, and rest on a wire rack for craggy, crispy KFC texture.'
       },
       {
-        question: 'Can I use boneless chicken tenders with this spice mix?',
-        answer: 'Yes! Tenders fry in just 5 to 7 minutes at 350°F and make exceptional sliders.'
+        question: 'What is the buttermilk substitute for this KFC recipe in India?',
+        answer: 'Whisk 1.5 cups plain curd (dahi) with 1/2 cup water and 1 tablespoon lemon juice. It creates the exact acidity and thickness needed to tenderize the chicken and bind the 11-spice maida coating.'
+      },
+      {
+        question: 'Can I use maida instead of all-purpose flour for KFC chicken?',
+        answer: 'Yes, maida is refined wheat flour. Blending 2.5 cups maida with 1/3 cup cornflour creates the light, crispy crunch characteristic of KFC chicken.'
       }
     ]
   },
@@ -588,6 +593,200 @@ export const RECIPES_DATA: Recipe[] = [
       {
         question: 'Can I substitute with chicken breast cutlets?',
         answer: 'Yes, slice chicken breasts horizontally into cutlets and fry for only 4-5 minutes to prevent drying out.'
+      }
+    ]
+  },
+  {
+    id: 'kerala-style-fried-chicken',
+    slug: 'kerala-style-fried-chicken',
+    title: 'Kerala Style Fried Chicken (Crispy Kozhi Porichathu)',
+    description: 'Master authentic Kerala style Kozhi Porichathu—marinated in crushed ginger-garlic, Kashmiri chili, fennel, and curry leaves, then deep fried in coconut oil with garlic cloves for an irresistible crunch.',
+    category: 'Spicy Chicken',
+    prepTime: '20 mins',
+    cookTime: '15 mins',
+    totalTime: '35 mins',
+    servings: '4 servings',
+    difficulty: 'Easy',
+    calories: '380 kcal / serving',
+    image: '/images/crispy-fried-chicken.jpg',
+    author: {
+      name: 'Chef Marcus Vance',
+      role: 'Culinary Director & Poultry Specialist',
+    },
+    publishedAt: '2026-03-01',
+    updatedAt: '2026-03-05',
+    tags: ['Kerala Fried Chicken', 'Kozhi Porichathu', 'Indian Style', 'Curry Leaves', 'Crispy Chicken'],
+    isPopular: true,
+    featured: true,
+    ingredients: [
+      { name: 'Bone-in chicken cuts (curry cut or drumsticks with deep slits)', amount: '1 kg (2.2 lbs)' },
+      { name: 'Kashmiri red chilli powder', amount: '2 tbsp', notes: 'for vibrant red color and mild heat' },
+      { name: 'Turmeric powder', amount: '1/2 tsp' },
+      { name: 'Freshly crushed black pepper', amount: '1 tbsp' },
+      { name: 'Fennel seed powder (perumjeerakam)', amount: '1 tsp', notes: 'signature Kerala aroma' },
+      { name: 'Garam masala powder', amount: '1 tsp' },
+      { name: 'Fresh ginger-garlic paste', amount: '2 tbsp' },
+      { name: 'Lemon juice or thick curd (dahi)', amount: '2 tbsp', notes: 'tenderizer' },
+      { name: 'Rice flour (arisi maavu)', amount: '2 tbsp', notes: 'for signature hard crunch' },
+      { name: 'Cornflour', amount: '2 tbsp', notes: 'crisp binder' },
+      { name: 'Egg white', amount: '1', notes: 'binds spice paste to skin' },
+      { name: 'Curry leaves (kariveppila)', amount: '3 to 4 sprigs' },
+      { name: 'Whole unpeeled garlic cloves', amount: '10 to 12 cloves', notes: 'crushed lightly' },
+      { name: 'Slit green chillies', amount: '4 to 5' },
+      { name: 'Coconut oil (or refined sunflower oil) for frying', amount: '2 to 3 cups' },
+      { name: 'Salt', amount: 'To taste (approx 1.5 tsp)' }
+    ],
+    instructions: [
+      {
+        step: 1,
+        title: 'Score Chicken & Marinate',
+        description: 'Make 2 to 3 deep diagonal slits across each chicken piece. Mix Kashmiri chilli powder, turmeric, black pepper, fennel powder, garam masala, ginger-garlic paste, lemon juice, and salt with 1 tablespoon water into a thick spice paste. Rub thoroughly into slits and crevices. Rest for at least 1 hour (ideally 4 hours in refrigerator).',
+        tip: 'Deep slits allow the spices and lemon to penetrate to the bone, keeping the interior juicy and flavorful.'
+      },
+      {
+        step: 2,
+        title: 'Add Crispy Starch Coating',
+        description: 'Just 10 minutes before frying, add rice flour, cornflour, and 1 egg white to the marinated chicken. Toss gently until every piece is coated in a sticky, spice-laden batter that clings firmly.',
+        tip: 'Rice flour is the secret to Kerala Kozhi Porichathu—it resists moisture and creates an audible, long-lasting crunch.'
+      },
+      {
+        step: 3,
+        title: 'Heat Kadhai with Coconut Oil',
+        description: 'Heat coconut oil (or sunflower oil) in a heavy cast-iron or tri-ply kadhai on medium-high heat until hot (around 340°F / 170°C). Slide chicken pieces gently into the oil, ensuring they are not crowded.',
+        tip: 'Authentic Kerala street stalls fry exclusively in pure coconut oil for that intoxicating traditional aroma.'
+      },
+      {
+        step: 4,
+        title: 'Fry with Curry Leaves & Garlic',
+        description: 'Fry chicken on medium heat for 6 to 8 minutes on one side, then flip. 3 minutes before removing the chicken, drop the crushed whole garlic cloves, slit green chillies, and fresh curry leaves directly into the hot oil around the chicken.',
+        tip: 'The sizzling curry leaves and garlic infuse their volatile oils directly into the chicken crust while turning into crispy garnish.'
+      },
+      {
+        step: 5,
+        title: 'Drain on Wire Rack (Jali)',
+        description: 'Once chicken turns deep mahogany red and reaches 165°F (74°C) internally, remove with a slotted spoon onto an elevated wire rack or stainless steel strainer. Garnish with the fried crispy curry leaves and garlic. Serve piping hot with onion rings and lemon wedges.',
+        tip: 'Never drain on flat paper towels—steam from the piping hot meat gets trapped underneath and makes the crust soggy.'
+      }
+    ],
+    cookingTips: [
+      'Use bone-in curry cut pieces: the bones retain internal moisture, while the spice paste fries into a shatteringly crisp crust.',
+      'Always add the rice flour and cornflour right before frying to prevent the starches from absorbing too much marinade moisture.',
+      'Fennel powder (perumjeerakam) is the essential spice that separates authentic Kerala chicken from regular chili chicken.'
+    ],
+    commonMistakes: [
+      'Frying in overly hot oil: Kashmiri chilli will scorch black and taste bitter before the meat cooks through.',
+      'Overcrowding the kadhai: dropping too many pieces causes oil temperature to plummet, making the chicken oily and limp.',
+      'Covering the bowl after frying: steam condenses on the lid and destroys the crispy rice flour shell.'
+    ],
+    faqs: [
+      {
+        question: 'What makes Kerala style fried chicken (Kozhi Porichathu) so crispy?',
+        answer: 'The combination of fine rice flour, cornflour, and an egg white binder creates a thin, glass-like crust that seals in chicken juices while frying into an ultra-crispy shell in hot coconut oil.'
+      },
+      {
+        question: 'Can I make Kozhi Porichathu without coconut oil?',
+        answer: 'Yes! Refined sunflower oil or groundnut oil works perfectly. For a hint of authentic Kerala flavor, add 2 tablespoons of coconut oil to your sunflower oil before frying.'
+      },
+      {
+        question: 'How do I prevent the chicken from turning black while frying?',
+        answer: 'Use mild Kashmiri red chilli powder instead of hot chili powder with high sugar content, and maintain steady medium heat (approx 340°F / 170°C) without letting the oil smoke.'
+      }
+    ]
+  },
+  {
+    id: 'chicken-65-crispy-fried',
+    slug: 'chicken-65-crispy-fried',
+    title: 'Restaurant Style Crispy Chicken 65',
+    description: 'The ultimate South Indian restaurant-style crispy Chicken 65 recipe: crunchy boneless chicken bites double-fried with cornflour and rice flour, then tossed with curry leaves, garlic, and green chillies.',
+    category: 'Spicy Chicken',
+    prepTime: '15 mins',
+    cookTime: '12 mins',
+    totalTime: '27 mins',
+    servings: '4 servings',
+    difficulty: 'Easy',
+    calories: '340 kcal / serving',
+    image: '/images/crispy-chicken-wings.jpg',
+    author: {
+      name: 'Chef Marcus Vance',
+      role: 'Culinary Director & Poultry Specialist',
+    },
+    publishedAt: '2026-03-01',
+    updatedAt: '2026-03-05',
+    tags: ['Chicken 65', 'Crispy Chicken 65', 'South Indian', 'Appetizer', 'Street Food'],
+    isPopular: true,
+    featured: true,
+    ingredients: [
+      { name: 'Boneless chicken thighs (cut into 1-inch bite-sized cubes)', amount: '500g (1.1 lbs)' },
+      { name: 'Fresh ginger-garlic paste', amount: '1.5 tbsp' },
+      { name: 'Kashmiri red chilli powder', amount: '1.5 tbsp' },
+      { name: 'Black pepper powder', amount: '1 tsp' },
+      { name: 'Turmeric powder', amount: '1/4 tsp' },
+      { name: 'Garam masala powder', amount: '1/2 tsp' },
+      { name: 'Thick curd (dahi)', amount: '2 tbsp', notes: 'whisked smooth' },
+      { name: 'Lemon juice', amount: '1 tbsp' },
+      { name: 'Cornflour', amount: '3 tbsp', notes: 'for light airy crunch' },
+      { name: 'Rice flour', amount: '1.5 tbsp', notes: 'for enduring crunch' },
+      { name: 'Egg white', amount: '1' },
+      { name: 'Fresh curry leaves', amount: '20 to 25 leaves' },
+      { name: 'Green chillies (slit lengthwise)', amount: '4 to 5' },
+      { name: 'Garlic cloves (finely chopped)', amount: '1 tbsp' },
+      { name: 'Oil for deep frying', amount: '2 cups' },
+      { name: 'Salt', amount: '1 tsp or to taste' }
+    ],
+    instructions: [
+      {
+        step: 1,
+        title: 'Marinate Chicken Bites',
+        description: 'In a mixing bowl, toss chicken thigh cubes with ginger-garlic paste, Kashmiri red chilli powder, black pepper, turmeric, garam masala, thick curd, lemon juice, and salt. Marinate for 30 to 45 minutes.',
+        tip: 'Boneless chicken thighs stay tender and juicy inside, whereas chicken breast can easily turn dry and stringy.'
+      },
+      {
+        step: 2,
+        title: 'Coat with Cornflour & Rice Flour Batter',
+        description: 'Add cornflour, rice flour, and egg white to the marinated chicken. Mix thoroughly with your hands until each bite is evenly coated in a semi-thick batter that clings without dripping.',
+        tip: 'Do not add water. The moisture from the curd and egg white creates the exact batter consistency needed for crispness.'
+      },
+      {
+        step: 3,
+        title: 'First Fry (Cook Through)',
+        description: 'Heat oil in a kadhai on medium heat (330°F / 165°C). Drop chicken pieces one by one to prevent sticking together. Fry for 4 to 5 minutes until chicken is cooked through and lightly golden. Remove with a slotted spoon onto a wire rack and rest for 5 minutes.',
+        tip: 'Double frying is the secret used by top Indian restaurants to achieve an unbreakable crispy exterior.'
+      },
+      {
+        step: 4,
+        title: 'Second Flash Fry (Maximum Crunch)',
+        description: 'Increase kadhai heat to high (375°F / 190°C). Return all fried chicken pieces to the hot oil for 60 to 90 seconds. Fry until the crust turns intensely crisp and deep red. Remove immediately to drain.',
+        tip: 'The second flash fry vaporizes residual surface moisture, creating a glass-like crunch.'
+      },
+      {
+        step: 5,
+        title: 'Aromatic Tempering',
+        description: 'In a separate wide pan, heat 1 tablespoon of oil. Add chopped garlic, slit green chillies, and curry leaves. Sauté for 30 seconds until aromatic and crackling. Toss in the crispy fried chicken pieces and shake the pan vigorously for 20 seconds. Serve immediately.',
+        tip: 'Never add wet sauce or water during tempering—keep it dry to preserve the shatteringly crisp coating.'
+      }
+    ],
+    cookingTips: [
+      'The 2:1 ratio of cornflour to rice flour provides both an airy puff and a durable crunch.',
+      'Double frying is non-negotiable for restaurant-style Chicken 65 that stays crunchy when served.',
+      'Boneless skinless chicken thighs make vastly superior Chicken 65 compared to dry chicken breasts.'
+    ],
+    commonMistakes: [
+      'Adding watery curd which dilutes the batter and causes the coating to slide off in hot oil.',
+      'Tossing with excessive wet gravy: Chicken 65 is traditionally a dry crispy appetizer, not a curry.',
+      'Frying in cold oil which makes the cornflour coating absorb oil and turn mushy.'
+    ],
+    faqs: [
+      {
+        question: 'Why does my Chicken 65 become soft or soggy after frying?',
+        answer: 'Chicken 65 becomes soggy if only plain flour or maida was used, if the pieces were fried only once at low heat, or if drained on flat paper towels. Use a cornflour-rice flour blend, double fry, and drain on a wire rack.'
+      },
+      {
+        question: 'Can I make crispy Chicken 65 in a kadhai?',
+        answer: 'Yes! A kadhai provides ideal heat concentration. Fry in small batches of 8 to 10 bites so the oil temperature remains stable.'
+      },
+      {
+        question: 'Is food color necessary for Chicken 65?',
+        answer: 'No. Authentic high-quality Kashmiri red chilli powder provides a gorgeous natural ruby-red hue without any artificial food coloring.'
       }
     ]
   }

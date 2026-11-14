@@ -51,6 +51,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
           level: 2,
           body: [
             '• Classic Southern Style: 75% All-Purpose Flour, 25% Cornstarch. This offers the ideal balance: the flour provides golden brown Maillard browning and body, while cornstarch delivers crispness.',
+            '• Indian Kitchen Blend (Maida + Cornflour): 70% Maida, 20% Cornflour (cornstarch), 10% Rice Flour (arisi maavu). This blend counteracts Indian humidity and prevents maida from turning into a chewy or rubbery crust.',
             '• Extra Craggy Ridge Style: 70% Flour, 20% Cornstarch, 10% Rice Flour.',
             '• Ultra-Thin Asian Glass Style: 100% Potato Starch or Cornstarch with a light egg white slurry.'
           ]

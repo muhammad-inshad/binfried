@@ -4,8 +4,8 @@ import { constructMetadata } from '@/lib/seo';
 import { RecipesClient } from './RecipesClient';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Fried Chicken Recipes – Crispy, KFC-Style, Korean & Wings',
-  description: 'Explore our complete collection of tested fried chicken recipes. Search and filter by category, difficulty, prep time, and style.',
+  title: 'Crispy Fried Chicken Recipes – KFC-Style, Kerala Kozhi Porichathu & Wings',
+  description: 'Explore tested crispy fried chicken recipes: KFC-style at home, Kerala Kozhi Porichathu, restaurant-style Chicken 65, and Korean double-fried chicken with kadhai frying tips.',
   canonicalUrl: '/recipes',
 });
 

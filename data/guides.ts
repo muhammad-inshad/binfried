@@ -62,11 +62,15 @@ export const COOKING_GUIDES: CookingGuide[] = [
     faqs: [
       {
         question: 'Why does my fried chicken get soggy after cooling?',
-        answer: 'Fried chicken becomes soggy when cooling on flat surfaces or paper towels because escaping internal steam gets trapped underneath the crust, converting crisp starches back into soggy dough. Cool exclusively on an elevated wire rack.'
+        answer: 'Fried chicken becomes soggy when cooling on flat surfaces or paper towels because escaping internal steam gets trapped underneath the crust, converting crisp starches back into soggy dough. Cool exclusively on an elevated wire rack or stainless steel sieve (jali).'
       },
       {
-        question: 'Can you use vodka in fried chicken batter?',
-        answer: 'Yes! Vodka inhibits gluten formation and evaporates faster than water at high temperatures, creating an exceptionally light and crispy crust.'
+        question: 'Can I use maida with cornflour or rice flour for extra crispy chicken?',
+        answer: 'Yes! Indian maida (all-purpose flour) is protein-rich. Mixing 70% maida with 20% cornflour and 10% fine rice flour (arisi maavu) dilutes gluten and creates an ultra-crispy, crunch-retaining crust perfect for Indian climates.'
+      },
+      {
+        question: 'How to make crispy fried chicken in a kadhai at home?',
+        answer: 'Use a heavy cast-iron or tri-ply kadhai, fill halfway with refined sunflower or groundnut oil, fry only 2-3 pieces at a time so the oil heat does not drop, and rest on a wire rack.'
       }
     ]
   },
@@ -136,15 +140,27 @@ export const COOKING_GUIDES: CookingGuide[] = [
       {
         title: 'Why Buttermilk Outperforms Citrus or Vinegar',
         content: [
-          'Strong acids like lemon juice or raw distilled vinegar have low pH levels that can denature and "cook" meat proteins quickly, squeezing out moisture and creating a chalky, stringy exterior.',
-          'Buttermilk, on the other hand, contains mild lactic acid. Lactic acid works gently, tenderizing protein fibers and softening collagen connective tissue without breaking down the cellular structure. Furthermore, milk sugars (lactose) caramelize during frying, producing an appetizing golden hue.'
+          'Strong acids like raw distilled vinegar have low pH levels that can denature and "cook" meat proteins quickly, squeezing out moisture and creating a chalky, stringy exterior.',
+          'Buttermilk contains mild lactic acid. Lactic acid works gently, tenderizing protein fibers and softening collagen connective tissue without breaking down the cellular structure. Furthermore, milk sugars (lactose) caramelize during frying, producing an appetizing golden hue.'
         ]
+      },
+      {
+        title: 'Indian Kitchen Buttermilk Substitute (Curd / Dahi Brine)',
+        content: [
+          'In India, cultured Western buttermilk is often hard to find in local dairy booths. You can make an identical, high-performance buttermilk substitute in 30 seconds at home.',
+          'Formula: Whisk 3/4 cup fresh unflavored curd (dahi) with 1/4 cup room-temperature water and 1 teaspoon lemon juice or white vinegar until silky and drinkable. This provides the exact lactic acid concentration, milk proteins, and cling factor required for KFC-style or Southern crispy fried chicken.'
+        ],
+        proTip: 'Avoid using sour dahi (khatta dahi) that has fermented for days, as overly sharp acidity can overpower delicate seasonings.'
       }
     ],
     faqs: [
       {
+        question: 'What is the best buttermilk substitute for fried chicken in India?',
+        answer: 'Whisk 3 parts fresh curd (dahi) with 1 part water and a splash of lemon juice. This replicates the acidity and viscosity of cultured buttermilk perfectly.'
+      },
+      {
         question: 'Can you marinate fried chicken for too long?',
-        answer: 'Yes. Marinating bone-in chicken for more than 24 hours in acidic buttermilk can cause the exterior meat to become unpleasantly soft or mealy. Stick to 4 to 12 hours for ideal texture.'
+        answer: 'Yes. Marinating bone-in chicken for more than 24 hours in acidic buttermilk or curd can cause the exterior meat to become unpleasantly soft or mealy. Stick to 4 to 12 hours for ideal texture.'
       }
     ]
   },
@@ -168,13 +184,25 @@ export const COOKING_GUIDES: CookingGuide[] = [
     directAnswer: 'You can easily fry chicken at home using a heavy cast iron skillet or Dutch oven filled with 1.5 to 2.5 inches of high-smoke-point oil (peanut or canola), monitoring temperature with a candy thermometer held between 325°F and 350°F.',
     sections: [
       {
-        title: 'The Cast-Iron Advantage',
+        title: 'The Cast-Iron & Kadhai Advantage',
         content: [
-          'Cast iron pans have high thermal mass. Once hot, they provide steady, radiant conduction heat that cooks through thick chicken bones while keeping oil temperature stable.'
+          'Heavy pans like cast iron skillets, Dutch ovens, and Indian cast-iron or tri-ply kadhais have high thermal mass. Once hot, they provide steady, radiant conduction heat that cooks through thick chicken bones while keeping oil temperature stable.',
+          'In an Indian kitchen, a round-bottom kadhai acts as a natural conical fryer. It concentrates the deepest oil pool in the center for submersing drumsticks and thighs, requiring 30% less oil than flat Western pots.'
+        ]
+      },
+      {
+        title: 'How to Fry Chicken in a Kadhai Without a Thermometer',
+        content: [
+          'If you don’t own a digital kitchen thermometer, use the wooden skewer or chopstick test. Dip a dry wooden skewer into the oil center. If steady, vigorous bubbling erupts immediately around the wood, oil is around 340°F–350°F (170°C–175°C) and ready for chicken.',
+          'Always fry in small batches of 2 to 3 pieces. Keep stove on medium flame to prevent darkening before the bone cooks through.'
         ]
       }
     ],
     faqs: [
+      {
+        question: 'How to make crispy fried chicken in a kadhai at home?',
+        answer: 'Fill a heavy kadhai halfway with refined sunflower or groundnut oil. Heat on medium until a wooden skewer bubbles vigorously. Fry 2 to 3 pieces at a time for 12 to 14 minutes, turning periodically, and drain on a wire rack.'
+      },
       {
         question: 'Is shallow frying as crispy as deep frying?',
         answer: 'Yes! When turned once or twice during cooking, shallow pan-frying creates an authentic homestyle blistered crust that many Southern cooks prefer over deep-fat immersion.'

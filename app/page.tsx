@@ -30,6 +30,8 @@ import { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = constructMetadata({
+  title: 'Crispy Fried Chicken Recipes, KFC Style at Home & Frying Guides',
+  description: 'Master ultra-crispy fried chicken at home: KFC-style copycats, Kerala Kozhi Porichathu, Chicken 65, kadhai frying tips, and curd-buttermilk substitutions.',
   canonicalUrl: '/',
 });
 

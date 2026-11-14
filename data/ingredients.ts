@@ -32,7 +32,11 @@ export const INGREDIENTS_DATA: IngredientKnowledge[] = [
       'Never pack flour tightly in cups; fluff with a fork before measuring or weigh by grams.',
       'Blend with 20-30% cornstarch for a much lighter, crispier bite.'
     ],
-    substitutes: ['Cake flour (lower gluten for lighter crunch)', 'Gluten-free 1:1 baking flour blend'],
+    substitutes: [
+      'Maida (Indian refined wheat flour - always blend with 25% cornflour or rice flour)',
+      'Cake flour (lower gluten for lighter crunch)',
+      'Gluten-free 1:1 baking flour blend'
+    ],
     relatedRecipes: ['crispy-fried-chicken', 'kfc-style-fried-chicken', 'nashville-hot-fried-chicken']
   },
   {
@@ -66,7 +70,11 @@ export const INGREDIENTS_DATA: IngredientKnowledge[] = [
       'Always use full-fat or whole buttermilk rather than skim versions for richer coating adhesion.',
       'Drizzle 3 tablespoons of buttermilk into your dry flour bowl to create instant craggy flakes.'
     ],
-    substitutes: ['Whole milk mixed with 1 tablespoon lemon juice or vinegar per cup', 'Plain whole milk Greek yogurt thinned 50/50 with milk'],
+    substitutes: [
+      'Fresh Indian curd / dahi (whisk 3/4 cup dahi with 1/4 cup water and 1 tsp lemon juice)',
+      'Whole milk mixed with 1 tablespoon lemon juice or vinegar per cup',
+      'Plain whole milk yogurt thinned 50/50 with milk'
+    ],
     relatedRecipes: ['crispy-fried-chicken', 'buttermilk-fried-chicken', 'crispy-chicken-burger']
   },
   {
@@ -83,7 +91,12 @@ export const INGREDIENTS_DATA: IngredientKnowledge[] = [
       'Strain oil through cheesecloth or a coffee filter after cooling to reuse 2-3 times safely.',
       'Discard oil when it turns dark brown, smells fishy, or foams excessively when heated.'
     ],
-    substitutes: ['Refined peanut oil', 'Corn oil', 'High-oleic sunflower oil', 'Canola oil'],
+    substitutes: [
+      'Refined sunflower oil (most popular neutral oil in India, smoke point 440°F)',
+      'Filtered groundnut oil (traditional Indian peanut oil, rich high-heat stability)',
+      'Rice bran oil (high smoke point 450°F, neutral finish)',
+      'Refined peanut oil or Canola oil'
+    ],
     relatedRecipes: ['crispy-fried-chicken', 'nashville-hot-fried-chicken']
   },
   {
