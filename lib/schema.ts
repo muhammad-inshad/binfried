@@ -54,16 +54,33 @@ export function getRecipeSchema(recipe: Recipe) {
     return `PT${num}M`;
   };
 
+  const imageUrl = recipe.image.startsWith('http')
+    ? recipe.image
+    : `${SITE_URL}${recipe.image.startsWith('/') ? recipe.image : `/${recipe.image}`}`;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Recipe',
     name: recipe.title,
-    image: [recipe.image],
+    image: [imageUrl],
     description: recipe.description,
     keywords: recipe.tags.join(', '),
     author: {
       '@type': 'Person',
-      name: recipe.author.name
+      name: recipe.author.name,
+      url: `${SITE_URL}/about`
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/logo.png`
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/recipes/${recipe.slug}`
     },
     datePublished: recipe.publishedAt,
     dateModified: recipe.updatedAt,
@@ -84,15 +101,24 @@ export function getRecipeSchema(recipe: Recipe) {
 }
 
 export function getArticleSchema(article: BlogArticle) {
+  const imageUrl = article.image.startsWith('http')
+    ? article.image
+    : `${SITE_URL}${article.image.startsWith('/') ? article.image : `/${article.image}`}`;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog/${article.slug}`
+    },
     headline: article.title,
     description: article.summary,
-    image: [article.image],
+    image: [imageUrl],
     author: {
       '@type': 'Person',
-      name: article.author.name
+      name: article.author.name,
+      url: `${SITE_URL}/about`
     },
     publisher: {
       '@type': 'Organization',
@@ -103,11 +129,7 @@ export function getArticleSchema(article: BlogArticle) {
       }
     },
     datePublished: article.publishedAt,
-    dateModified: article.updatedAt,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}/blog/${article.slug}`
-    }
+    dateModified: article.updatedAt
   };
 }
 
