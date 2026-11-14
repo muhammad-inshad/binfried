@@ -26,6 +26,13 @@ import { BlogCard } from '@/components/blog/BlogCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getFAQSchema } from '@/lib/schema';
 
+import { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = constructMetadata({
+  canonicalUrl: '/',
+});
+
 export default function HomePage() {
   const popularRecipes = RECIPES_DATA.filter(r => r.isPopular).slice(0, 6);
   const featuredGuides = COOKING_GUIDES.slice(0, 4);
@@ -102,7 +109,8 @@ export default function HomePage() {
             alt="Crispy golden fried chicken in a striped bucket with drumsticks and sides"
             fill
             priority
-            sizes="100vw"
+            fetchPriority="high"
+            sizes="(max-width: 1280px) 100vw, 1280px"
             className="object-cover object-center md:object-right opacity-90"
           />
           {/* Vignette & Left Gradient Overlay for readable white text */}

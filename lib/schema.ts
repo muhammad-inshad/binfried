@@ -1,6 +1,6 @@
 import { Recipe, BlogArticle, CookingGuide, IngredientKnowledge } from '@/types';
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://binfried.store';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.binfried.store';
 export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'BINFried';
 export const SITE_TAGLINE = process.env.NEXT_PUBLIC_SITE_TAGLINE || 'The Home of Crispy Fried Chicken';
 
@@ -147,6 +147,39 @@ export function getArticleSchema(article: BlogArticle) {
     },
     datePublished: article.publishedAt,
     dateModified: article.updatedAt
+  };
+}
+
+export function getGuideArticleSchema(guide: CookingGuide) {
+  const imageUrl = guide.image.startsWith('http')
+    ? guide.image
+    : `${SITE_URL}${guide.image.startsWith('/') ? guide.image : `/${guide.image}`}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/cooking-guides/${guide.slug}`
+    },
+    headline: guide.title,
+    description: guide.summary,
+    image: [imageUrl],
+    author: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/logo.png`
+      }
+    },
+    datePublished: guide.publishedAt,
+    dateModified: guide.updatedAt
   };
 }
 

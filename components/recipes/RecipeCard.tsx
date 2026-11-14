@@ -13,13 +13,14 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, priority = false
   return (
     <article className="group bg-white rounded-2xl overflow-hidden border border-[#F0E2DE] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
       {/* Image Container */}
-      <Link href={`/recipes/${recipe.slug}`} className="relative block aspect-4/3 overflow-hidden bg-gray-100">
+      <Link href={`/recipes/${recipe.slug}`} className="relative block aspect-4/3 overflow-hidden bg-stone-100">
         <Image
           src={recipe.image}
           alt={recipe.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
           priority={priority}
+          loading={priority ? undefined : 'lazy'}
           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         {/* Category Pill */}

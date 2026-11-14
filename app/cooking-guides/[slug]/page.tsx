@@ -6,7 +6,7 @@ import { COOKING_GUIDES } from '@/data/guides';
 import { constructMetadata } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { getFAQSchema } from '@/lib/schema';
+import { getFAQSchema, getGuideArticleSchema } from '@/lib/schema';
 import { 
   CheckCircle2, 
   Sparkles, 
@@ -58,6 +58,7 @@ export default async function CookingGuideDetailPage({ params }: PageProps) {
 
   return (
     <div className="pb-20">
+      <JsonLd data={getGuideArticleSchema(guide)} />
       {guide.faqs.length > 0 && <JsonLd data={getFAQSchema(guide.faqs)} />}
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">

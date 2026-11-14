@@ -5,7 +5,7 @@ export function constructMetadata({
   title,
   description,
   image = '/images/hero-fried-chicken.jpg',
-  canonicalUrl,
+  canonicalUrl = '',
   type = 'website'
 }: {
   title?: string;
@@ -16,8 +16,19 @@ export function constructMetadata({
 }): Metadata {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} – ${SITE_TAGLINE}`;
   const fullDesc = description || 'Master the art of crispy fried chicken with tested recipes, exact oil temperatures, secret spice blends, and food science cooking tutorials.';
-  const url = canonicalUrl ? `${SITE_URL}${canonicalUrl}` : SITE_URL;
-  const ogImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+  
+  // Format canonical clean path: avoid trailing slashes except for root
+  let cleanPath = canonicalUrl.trim();
+  if (cleanPath && !cleanPath.startsWith('/')) {
+    cleanPath = `/${cleanPath}`;
+  }
+  if (cleanPath !== '/' && cleanPath.endsWith('/')) {
+    cleanPath = cleanPath.slice(0, -1);
+  }
+
+  const baseOrigin = SITE_URL.endsWith('/') ? SITE_URL.slice(0, -1) : SITE_URL;
+  const url = cleanPath && cleanPath !== '/' ? `${baseOrigin}${cleanPath}` : baseOrigin;
+  const ogImage = image.startsWith('http') ? image : `${baseOrigin}${image.startsWith('/') ? image : `/${image}`}`;
 
   return {
     title: fullTitle,

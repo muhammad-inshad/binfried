@@ -11,12 +11,13 @@ interface GuideCardProps {
 export const GuideCard: React.FC<GuideCardProps> = ({ guide }) => {
   return (
     <article className="group bg-white rounded-2xl overflow-hidden border border-[#F0E2DE] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-      <Link href={`/cooking-guides/${guide.slug}`} className="relative block aspect-16/9 overflow-hidden bg-gray-100">
+      <Link href={`/cooking-guides/${guide.slug}`} className="relative block aspect-16/9 overflow-hidden bg-stone-100">
         <Image
           src={guide.image}
           alt={guide.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 280px"
+          loading="lazy"
           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         <span className="absolute top-3 left-3 bg-[#D71920] text-white font-bold text-xs px-3 py-1 rounded-full shadow-md">

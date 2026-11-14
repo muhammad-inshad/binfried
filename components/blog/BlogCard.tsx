@@ -11,12 +11,13 @@ interface BlogCardProps {
 export const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
   return (
     <article className="group bg-white rounded-2xl overflow-hidden border border-[#F0E2DE] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-      <Link href={`/blog/${article.slug}`} className="relative block aspect-16/9 overflow-hidden bg-gray-100">
+      <Link href={`/blog/${article.slug}`} className="relative block aspect-16/9 overflow-hidden bg-stone-100">
         <Image
           src={article.image}
           alt={article.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          loading="lazy"
           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[#D71920] font-bold text-xs px-3 py-1 rounded-full shadow-xs">

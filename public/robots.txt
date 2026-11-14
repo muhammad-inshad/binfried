@@ -1,6 +1,5 @@
 User-Agent: *
 Allow: /
 
-Host: https://binfried.store
-Sitemap: https://binfried.store/sitemap.xml
-
+Host: https://www.binfried.store
+Sitemap: https://www.binfried.store/sitemap.xml

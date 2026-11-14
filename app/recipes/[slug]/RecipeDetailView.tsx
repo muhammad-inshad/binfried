@@ -145,13 +145,14 @@ export const RecipeDetailView: React.FC<Props> = ({ recipe }) => {
         </header>
 
         {/* Featured Image */}
-        <div className="relative aspect-16/9 rounded-3xl overflow-hidden shadow-lg border border-[#F0E2DE] mb-10 bg-gray-100">
+        <div className="relative aspect-16/9 rounded-3xl overflow-hidden shadow-lg border border-[#F0E2DE] mb-10 bg-stone-100">
           <Image
             src={recipe.image}
             alt={recipe.title}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            fetchPriority="high"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
             className="object-cover"
           />
         </div>
