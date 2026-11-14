@@ -26,7 +26,6 @@ export default function RootLayout({
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#D71920" />
       </head>
       <body className="min-h-screen flex flex-col antialiased selection:bg-[#D71920] selection:text-white">
