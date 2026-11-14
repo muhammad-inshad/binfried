@@ -23,10 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Preconnect to external resources */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="theme-color" content="#D71920" />
+      </head>
+      <body className="min-h-screen flex flex-col antialiased selection:bg-[#D71920] selection:text-white">
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -37,10 +44,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#D71920" />
-      </head>
-      <body className="min-h-screen flex flex-col antialiased selection:bg-[#D71920] selection:text-white">
+
         {/* Google Tag Manager (noscript fallback) */}
         <noscript>
           <iframe
@@ -54,9 +58,9 @@ export default function RootLayout({
         {/* Google Analytics 4 (GA4) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics-gtag" strategy="afterInteractive">
+        <Script id="google-analytics-gtag" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
