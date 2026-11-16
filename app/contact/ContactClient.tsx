@@ -16,6 +16,16 @@ export const ContactClient: React.FC = () => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
       setSubmitted(true);
+
+      const whatsappNumber = '917025034758';
+      const textMessage = `*New Contact Inquiry - BINFried*\n\n` +
+        `*Name:* ${formData.name.trim()}\n` +
+        `*Email:* ${formData.email.trim()}\n` +
+        `*Subject:* ${formData.subject.trim() || 'General Inquiry'}\n\n` +
+        `*Message:*\n${formData.message.trim()}`;
+
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textMessage)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
