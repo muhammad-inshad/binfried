@@ -1,6 +1,6 @@
 import { Recipe, BlogArticle, CookingGuide, IngredientKnowledge } from '@/types';
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.binfried.store';
+export const SITE_URL = 'https://www.binfried.store';
 export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'BINFried';
 export const SITE_TAGLINE = process.env.NEXT_PUBLIC_SITE_TAGLINE || 'The Home of Crispy Fried Chicken';
 
@@ -9,8 +9,8 @@ export function getOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
-    url: SITE_URL,
-    logo: `${SITE_URL}/images/logo.png`,
+    url: 'https://www.binfried.store',
+    logo: 'https://www.binfried.store/images/logo.png',
     description: 'BINFried is an educational culinary platform dedicated to fried chicken recipes, cooking tutorials, ingredient chemistry, and crispy frying science.',
     sameAs: [
       'https://twitter.com/binfried_store',
@@ -25,10 +25,10 @@ export function getWebSiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: SITE_NAME,
-    url: SITE_URL,
+    url: 'https://www.binfried.store',
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${SITE_URL}/recipes?search={search_term_string}`,
+      target: 'https://www.binfried.store/recipes?search={search_term_string}',
       'query-input': 'required name=search_term_string'
     }
   };
