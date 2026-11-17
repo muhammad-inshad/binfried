@@ -113,7 +113,8 @@ export default function HomePage() {
             height={768}
             priority
             fetchPriority="high"
-            sizes="(max-width: 1280px) 100vw, 1280px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
+            quality={80}
             className="w-full h-full object-cover object-center md:object-right opacity-90"
           />
           {/* Vignette & Left Gradient Overlay for readable white text */}
@@ -192,8 +193,8 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {popularRecipes.map((recipe, index) => (
-            <RecipeCard key={recipe.id} recipe={recipe} priority={index < 2} />
+          {popularRecipes.map((recipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} priority={false} />
           ))}
         </div>
       </section>

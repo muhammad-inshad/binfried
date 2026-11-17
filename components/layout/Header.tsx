@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
                   alt="BINFried Logo"
                   width={44}
                   height={44}
-                  priority
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
               </div>
