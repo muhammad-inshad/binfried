@@ -20,15 +20,20 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: '/((?!_next|images|favicon.ico|icon.png|apple-icon.png|robots.txt|sitemap.xml).*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+        ],
+      },
+      {
         source: '/:path*',
         headers: [
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
           },
           {
             key: 'Referrer-Policy',
