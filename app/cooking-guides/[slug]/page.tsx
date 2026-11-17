@@ -93,10 +93,11 @@ export default async function CookingGuideDetailPage({ params }: PageProps) {
           <Image
             src={guide.image}
             alt={guide.title}
-            fill
+            width={1200}
+            height={675}
             priority
             sizes="(max-width: 1024px) 100vw, 896px"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 

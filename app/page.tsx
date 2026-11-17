@@ -109,11 +109,12 @@ export default function HomePage() {
           <Image
             src="/images/hero-bucket-banner.jpg"
             alt="Crispy golden fried chicken in a striped bucket with drumsticks and sides"
-            fill
+            width={1376}
+            height={768}
             priority
             fetchPriority="high"
             sizes="(max-width: 1280px) 100vw, 1280px"
-            className="object-cover object-center md:object-right opacity-90"
+            className="w-full h-full object-cover object-center md:object-right opacity-90"
           />
           {/* Vignette & Left Gradient Overlay for readable white text */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#6e050a] via-[#88080E]/90 to-transparent w-full md:w-3/4 z-10" />
@@ -223,9 +224,10 @@ export default function HomePage() {
                 <Image
                   src={cat.image}
                   alt={cat.title}
-                  fill
+                  width={480}
+                  height={300}
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover opacity-60 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500 absolute inset-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 

@@ -149,11 +149,12 @@ export const RecipeDetailView: React.FC<Props> = ({ recipe }) => {
           <Image
             src={recipe.image}
             alt={recipe.title}
-            fill
+            width={1200}
+            height={675}
             priority
             fetchPriority="high"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 

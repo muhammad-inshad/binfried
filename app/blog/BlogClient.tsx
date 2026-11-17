@@ -52,10 +52,11 @@ export const BlogClient: React.FC = () => {
               <Image
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
-                fill
+                width={800}
+                height={500}
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <span className="absolute top-4 left-4 bg-[#D71920] text-white font-bold text-xs px-3.5 py-1 rounded-full shadow-md">
                 Featured Article

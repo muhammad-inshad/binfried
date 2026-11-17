@@ -15,10 +15,11 @@ export const GuideCard: React.FC<GuideCardProps> = ({ guide }) => {
         <Image
           src={guide.image}
           alt={guide.title}
-          fill
+          width={400}
+          height={225}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 280px"
           loading="lazy"
-          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         <span className="absolute top-3 left-3 bg-[#D71920] text-white font-bold text-xs px-3 py-1 rounded-full shadow-md">
           {guide.category}

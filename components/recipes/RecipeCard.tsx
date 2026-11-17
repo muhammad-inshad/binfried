@@ -17,11 +17,12 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, priority = false
         <Image
           src={recipe.image}
           alt={recipe.title}
-          fill
+          width={400}
+          height={300}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
           priority={priority}
           loading={priority ? undefined : 'lazy'}
-          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         {/* Category Pill */}
         <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[#D71920] font-bold text-xs px-3 py-1 rounded-full shadow-xs">

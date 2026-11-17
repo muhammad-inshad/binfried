@@ -41,9 +41,10 @@ export default function IngredientsPage() {
                 <Image
                   src={item.image}
                   alt={item.name}
-                  fill
+                  width={480}
+                  height={300}
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </Link>
 

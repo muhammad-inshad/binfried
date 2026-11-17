@@ -20,8 +20,9 @@ export const Footer: React.FC = () => {
                 <Image
                   src="/images/logo.png"
                   alt="BINFried Logo"
-                  fill
-                  className="object-cover"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <span className="text-2xl font-black tracking-tight text-white font-serif">

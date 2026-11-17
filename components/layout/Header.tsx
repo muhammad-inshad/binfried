@@ -51,9 +51,10 @@ export const Header: React.FC = () => {
                 <Image
                   src="/images/logo.png"
                   alt="BINFried Logo"
-                  fill
+                  width={44}
+                  height={44}
                   priority
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex flex-col">

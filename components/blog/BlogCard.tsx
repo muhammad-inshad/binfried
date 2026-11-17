@@ -15,10 +15,11 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
         <Image
           src={article.image}
           alt={article.title}
-          fill
+          width={400}
+          height={225}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
           loading="lazy"
-          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[#D71920] font-bold text-xs px-3 py-1 rounded-full shadow-xs">
           {article.category}
