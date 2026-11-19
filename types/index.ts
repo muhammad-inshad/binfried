@@ -71,6 +71,7 @@ export interface BlogArticle {
     }[];
   };
   relatedRecipeSlugs?: string[];
+  relatedIngredientSlugs?: string[];
   tags: string[];
 }
 

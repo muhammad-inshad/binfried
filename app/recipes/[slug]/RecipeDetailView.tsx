@@ -24,6 +24,8 @@ import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getRecipeSchema, getFAQSchema, getAuthorPersonSchema } from '@/lib/schema';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
+import { getIngredientSlug, TECHNIQUE_GUIDES } from '@/lib/internalLinks';
+import { BookOpen } from 'lucide-react';
 
 interface Props {
   recipe: Recipe;
@@ -197,22 +199,37 @@ export const RecipeDetailView: React.FC<Props> = ({ recipe }) => {
               <ul className="space-y-3">
                 {recipe.ingredients.map((ing, idx) => {
                   const isChecked = checkedIngredients[idx];
+                  const ingredientSlug = getIngredientSlug(ing.name);
+
                   return (
                     <li
                       key={idx}
-                      onClick={() => toggleIngredient(idx)}
-                      className={`flex items-start gap-3 p-2 rounded-xl cursor-pointer transition-colors text-sm ${
+                      className={`flex items-start gap-3 p-2 rounded-xl transition-colors text-sm ${
                         isChecked ? 'bg-gray-50 text-gray-400 line-through' : 'hover:bg-red-50/50 text-gray-800'
                       }`}
                     >
-                      <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                        isChecked ? 'bg-[#D71920] border-[#D71920] text-white' : 'border-gray-300 bg-white'
-                      }`}>
+                      <button
+                        type="button"
+                        onClick={() => toggleIngredient(idx)}
+                        aria-label={`Mark ${ing.name} as ${isChecked ? 'unselected' : 'selected'}`}
+                        className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition-colors cursor-pointer ${
+                          isChecked ? 'bg-[#D71920] border-[#D71920] text-white' : 'border-gray-300 bg-white'
+                        }`}
+                      >
                         {isChecked && <Check className="w-3.5 h-3.5" />}
-                      </div>
-                      <div>
+                      </button>
+                      <div className="grow">
                         <span className="font-bold text-gray-900">{ing.amount}</span>{' '}
-                        <span>{ing.name}</span>
+                        {ingredientSlug ? (
+                          <Link
+                            href={`/ingredients/${ingredientSlug}`}
+                            className="font-medium text-gray-900 hover:text-[#D71920] hover:underline underline-offset-2 transition-colors"
+                          >
+                            {ing.name}
+                          </Link>
+                        ) : (
+                          <span>{ing.name}</span>
+                        )}
                         {ing.notes && (
                           <span className="text-xs text-gray-400 block italic">({ing.notes})</span>
                         )}
@@ -327,6 +344,42 @@ export const RecipeDetailView: React.FC<Props> = ({ recipe }) => {
           </div>
 
         </div>
+
+        {/* Essential Frying Guides for this Recipe */}
+        <section className="mt-16 pt-10 border-t border-[#F0E2DE] space-y-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-xs font-bold text-[#D71920] uppercase tracking-wider">Culinary Techniques</span>
+              <h2 className="text-2xl font-black text-gray-900 font-serif mt-1">
+                Essential Techniques For This Recipe
+              </h2>
+            </div>
+            <Link href="/cooking-guides" className="text-xs sm:text-sm font-bold text-[#D71920] hover:underline flex items-center gap-1">
+              <span>All Guides</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {TECHNIQUE_GUIDES.slice(0, 3).map((guide) => (
+              <div key={guide.slug} className="bg-white rounded-2xl p-5 border border-[#F0E2DE] shadow-xs flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-[#D71920]">{guide.category}</span>
+                  <h3 className="font-bold text-base text-gray-900 font-serif mt-1">
+                    {guide.title}
+                  </h3>
+                </div>
+                <Link
+                  href={`/cooking-guides/${guide.slug}`}
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#D71920] hover:underline"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  <span>Read Technique Guide</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Related Recipes Section */}
         <section className="mt-20 pt-12 border-t border-[#F0E2DE] space-y-6">

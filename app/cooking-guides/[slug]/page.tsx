@@ -3,10 +3,12 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { COOKING_GUIDES } from '@/data/guides';
+import { RECIPES_DATA } from '@/data/recipes';
 import { constructMetadata } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getFAQSchema, getGuideArticleSchema } from '@/lib/schema';
+import { RecipeCard } from '@/components/recipes/RecipeCard';
 import { 
   CheckCircle2, 
   Sparkles, 
@@ -55,6 +57,8 @@ export default async function CookingGuideDetailPage({ params }: PageProps) {
   const relatedGuides = COOKING_GUIDES
     .filter((g) => g.slug !== guide.slug)
     .slice(0, 3);
+
+  const featuredRecipes = RECIPES_DATA.slice(0, 2);
 
   return (
     <div className="pb-20">
@@ -173,6 +177,27 @@ export default async function CookingGuideDetailPage({ params }: PageProps) {
             </div>
           </section>
         )}
+
+        {/* Featured Tested Recipes Using This Technique */}
+        <section className="mt-16 pt-10 border-t border-[#F0E2DE] space-y-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-xs font-bold text-[#D71920] uppercase tracking-wider">Kitchen Application</span>
+              <h2 className="text-2xl font-black text-gray-900 font-serif mt-1">
+                Recipes That Use This Technique
+              </h2>
+            </div>
+            <Link href="/recipes" className="text-xs sm:text-sm font-bold text-[#D71920] hover:underline flex items-center gap-1">
+              <span>All Recipes</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {featuredRecipes.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
 
         {/* Related Guides */}
         <section className="mt-16 pt-12 border-t border-[#F0E2DE] space-y-6">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BLOG_ARTICLES } from '@/data/blogs';
 import { RECIPES_DATA } from '@/data/recipes';
+import { INGREDIENTS_DATA } from '@/data/ingredients';
 import { constructMetadata } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -56,6 +57,10 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
   const relatedRecipes = RECIPES_DATA.filter((r) =>
     article.relatedRecipeSlugs?.includes(r.slug)
+  );
+
+  const relatedIngredients = INGREDIENTS_DATA.filter((ing) =>
+    article.relatedIngredientSlugs?.includes(ing.slug)
   );
 
   const relatedArticles = BLOG_ARTICLES.filter((a) => a.slug !== article.slug).slice(0, 2);
@@ -197,6 +202,44 @@ export default async function BlogDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {relatedRecipes.map((recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related Ingredients Science */}
+        {relatedIngredients.length > 0 && (
+          <section className="mt-16 pt-10 border-t border-[#F0E2DE] space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-xs font-bold text-[#D71920] uppercase tracking-wider">Ingredient Chemistry</span>
+                <h3 className="text-2xl font-bold text-gray-900 font-serif mt-1">
+                  Ingredient Science Deep-Dives
+                </h3>
+              </div>
+              <Link href="/ingredients" className="text-xs font-bold text-[#D71920] hover:underline flex items-center gap-1">
+                <span>All Ingredients</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {relatedIngredients.map((item) => (
+                <div key={item.id} className="bg-white rounded-2xl p-6 border border-[#F0E2DE] shadow-xs flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] font-bold text-[#D71920] uppercase">{item.roleInFrying}</span>
+                    <h4 className="font-bold text-base text-gray-900 font-serif mt-1">
+                      {item.name}
+                    </h4>
+                    <p className="text-xs text-gray-500 mt-2 line-clamp-2">{item.summary}</p>
+                  </div>
+                  <Link
+                    href={`/ingredients/${item.slug}`}
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#D71920] hover:underline"
+                  >
+                    <span>Read Ingredient Guide</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               ))}
             </div>
           </section>

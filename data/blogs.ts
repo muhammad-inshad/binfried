@@ -17,6 +17,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     updatedAt: '2026-03-01',
     tags: ['Food Science', 'Cornstarch', 'Crispy Technique', 'Culinary Secrets'],
     relatedRecipeSlugs: ['crispy-fried-chicken', 'korean-fried-chicken'],
+    relatedIngredientSlugs: ['cornstarch', 'all-purpose-flour'],
     tableOfContents: [
       { id: 'direct-answer', title: 'Direct Culinary Summary' },
       { id: 'the-problem-with-flour', title: 'Why 100% Flour Creates a Leathery Crust' },
@@ -147,6 +148,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     updatedAt: '2026-02-19',
     tags: ['Cooking Oil', 'Smoke Points', 'Peanut Oil', 'Frying Science'],
     relatedRecipeSlugs: ['kfc-style-fried-chicken', 'nashville-hot-fried-chicken'],
+    relatedIngredientSlugs: ['cooking-oil-peanut-canola'],
     tableOfContents: [
       { id: 'direct-answer', title: 'Top Oil Recommendations' },
       { id: 'peanut-oil', title: '1. Peanut Oil (The Gold Standard)' },
